@@ -16,10 +16,23 @@ class UserSeeder extends Seeder
     {
         User::factory(5)->create();
         User::create([
+            'name'=>'Super Admin',
+            'email'=>'superadmin@gmail.com',
+            'email_verified_at'=>now(),
+            'role'=>'superadmin',
+            'phone'=>'082330623370',
+            'bio'=>'flutter Dev',
+            'password'=>Hash::make('123456'),
+        ]);
+        User::create([
             'name'=>'fauzan',
             'email'=>'fauzan@gmail.com',
             'email_verified_at'=>now(),
+            'role'=>'admin',
+            'phone'=>'082330623371',
+            'bio'=>'flutter and Laravel Dev',
             'password'=>Hash::make('123456'),
         ]);
+
     }
 }
